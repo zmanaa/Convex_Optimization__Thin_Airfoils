@@ -14,7 +14,7 @@ addpath("utilis\colormaps\")
 FIG_FOLDER_NAME = 'OPTIMIZATION/';
 folderName      = ['FIGURES/' FIG_FOLDER_NAME];
 TYPE            = case_string;
-
+NAME            = 'NACA64a210';
 
 %%% Making a directory for figures
 if ~exist(folderName, 'file') % check if folder doesn't exist
@@ -75,8 +75,8 @@ plot(x, y_l, 'LineWidth', 2);
 
 
 % Set the axis labels and title
-xlabel('x/c (m)', 'Interpreter', 'latex');
-ylabel('y/c (m)', 'Interpreter', 'latex');
+xlabel('$x/c$ (m)', 'Interpreter', 'latex');
+ylabel('$y/c$ (m)', 'Interpreter', 'latex');
 
 
 % Add minor ticks to the x and y axes
@@ -104,7 +104,7 @@ if PAYLOAD_FLAG
         'Orientation', 'vertical');
     set(l,'box', 'off')
 else
-    legend('upper surface','lower surface', ...
+    l = legend('upper surface','lower surface', ...
         'Interpreter','latex', ...
         'Location', 'eastoutside', ...
         'Orientation', 'vertical');
@@ -117,5 +117,5 @@ axis padded
 
 % Save the figure
 print('-dpdf', '-painters', '-cmyk', '-loose', ...,
-    [folderName, 'OPTIMIZE_AIRFOIL_',  TYPE, '.pdf']);
+    [folderName, 'OPTIMIZED_', NAME, '_',  TYPE, '.pdf']);
 end

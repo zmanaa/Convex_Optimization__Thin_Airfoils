@@ -16,9 +16,9 @@ addpath("utilis\")
 
 
 % choosing the optimization case
-%opt_case = 'min_supersonic_drag';
+opt_case = 'min_supersonic_drag';
 %opt_case = 'max_L_over_D_payload';
-opt_case = 'max_L_over_D_payload_subsonic_const';
+%opt_case = 'max_L_over_D_payload_subsonic_const';
 
 
 % solve the optimization problem
@@ -27,3 +27,6 @@ opt_case = 'max_L_over_D_payload_subsonic_const';
 
 % plot airfoil
 plot_airfoil(optimized_params, opt_case);
+
+% extract coordinates 
+extract_coords_for_ansys(optimized_params, opt_case)
