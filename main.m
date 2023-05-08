@@ -17,8 +17,8 @@ addpath("utilis\")
 
 % choosing the optimization case
 %opt_case = 'min_supersonic_drag';
-%opt_case = 'max_L_over_D_payload';
-opt_case = 'max_L_over_D_payload_subsonic_const';
+opt_case = 'max_L_over_D_payload';
+%opt_case = 'max_L_over_D_payload_subsonic_const';
 
 
 % solve the optimization problem
