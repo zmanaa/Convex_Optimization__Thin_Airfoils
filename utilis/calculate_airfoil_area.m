@@ -55,11 +55,11 @@ axis padded
 
 
 FIG_FOLDER_NAME = 'OPTIMIZATION/';
-folderName      = ['FIGURES/' FIG_FOLDER_NAME];
+folderName      = ['/FIGURES/' FIG_FOLDER_NAME];
 TYPE            = 'ORIGINAL';
 NAME            = 'NACA64a210';
 
-print('-dpdf', '-painters', '-cmyk', '-loose', ...,
-    [folderName, TYPE, '_', NAME, '.pdf']);
+print('-dpng', '-painters', '-cmyk', '-loose', ...,
+    [folderName, TYPE, '_', NAME, '.png']);
 
 area = trapz(x_u, y_u) + abs(trapz (x_l, y_l));
