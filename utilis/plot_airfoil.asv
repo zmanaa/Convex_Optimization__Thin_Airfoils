@@ -117,5 +117,5 @@ axis padded
 
 % Save the figure
 print('-dpng', '-painters', '-cmyk', '-loose', ...,
-    [folderName, 'OPTIMIZED_', NAME, '_',  TYPE, '.png']);
+    [folderName, 'OPTIMIZED_', NAME, '_',  TYPE, '.pdf']);
 end
