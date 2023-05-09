@@ -1,4 +1,4 @@
-function [optimized_params] = solve_optimization(opt_case)
+function [optimized_params, cost_function] = solve_optimization(opt_case)
 % solve_optimization: a function that selects and calls a specific 
 % optimization function based on the given case string. 
 %   Inputs:
@@ -30,7 +30,7 @@ functionHandles('max_L_over_D_payload_subsonic_const') = ...
 % Call the appropriate function based on the case string
 if functionHandles.isKey(opt_case)
     func = functionHandles(opt_case);
-    optimized_params = func();
+    [optimized_params, cost_function] = func();
 else
     error('Invalid case string');
 end

@@ -1,4 +1,5 @@
-function [optimized_params] = max_L_over_D_payload_subsonic_with_constr()
+function [optimized_params, lift_to_drag] = ...
+            max_L_over_D_payload_subsonic_with_constr()
 % max_L_over_D_payload_subsonic_with_constr: A function that maximize the
 % lift over drag ratio with internal payload constraint and subsonic
 % constraints. It uses Convex Optimization cvx Toolbox to solve the
@@ -36,7 +37,7 @@ end
 
 [~, idx]   = max(lift_to_drag);
 optimized_params    = x(:,idx);
-
+ %lift_to_drag = lift_to_drag(idx);
 end
 
 
@@ -69,7 +70,7 @@ cvx_begin
     circle_1 = xc + r.*cos(theta_a);
     circle_2 = xc + r.*cos(theta_b);
     
-    objective_function   = (x.'*Q*x)/aoa;
+    objective_function   = (x.'*Q*x)/deg2rad(aoa);
     
     minimize( objective_function )
     subject to

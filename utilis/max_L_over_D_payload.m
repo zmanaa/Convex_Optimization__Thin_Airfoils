@@ -1,4 +1,4 @@
-function [optimized_params] = max_L_over_D_payload()
+function [optimized_params, lift_to_drag] = max_L_over_D_payload()
 % max_L_over_D_payload: A function that maximize the lift over drag ratio
 % with internal payload constraint. It uses Convex Optimization cvx Toolbox
 % to solve the optimization problem.
@@ -19,7 +19,7 @@ function [optimized_params] = max_L_over_D_payload()
 [params] = get_params();
 
 c       = linspace(1,0,20);         % default
-aoa     = linspace(0.001,20,30);    % default
+aoa     = linspace(0.001,20,50);    % default
 theta_a = linspace(0,pi,100);       % default
 theta_b = linspace(pi,2*pi,100);    % default
 M       = params.M;
@@ -37,7 +37,7 @@ end
 
 [~, idx]   = max(lift_to_drag);
 optimized_params    = x(:,idx);
-
+% lift_to_drag = lift_to_drag(idx)
 end
 
 
@@ -70,7 +70,7 @@ cvx_begin
     circle_1 = xc + r.*cos(theta_a);
     circle_2 = xc + r.*cos(theta_b);
     
-    objective_function   = (x.'*Q*x)/aoa;
+    objective_function   = (x.'*Q*x)/(aoa*D2R);
     
     minimize( objective_function )
     subject to

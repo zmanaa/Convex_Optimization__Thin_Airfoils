@@ -40,7 +40,7 @@ fig = figure();
 
 % Colormap
 m=3;
-cm_magma=viridis(m);
+cm_magma=plasma(m);
 magma_cm = colormap(cm_magma);
 set(gca, 'colororder', magma_cm);
 
@@ -116,6 +116,9 @@ axis padded
 
 
 % Save the figure
+% print('-dpng', '-painters', '-cmyk', '-loose', ...,
+%     [folderName, 'OPTIMIZED_', NAME, '_',  TYPE, '.png']);
 print('-dpng', '-painters', '-cmyk', '-loose', ...,
-    [folderName, 'OPTIMIZED_', NAME, '_',  TYPE, '.png']);
+    [folderName, 'PAPER_',  TYPE, '.png']);
+
 end

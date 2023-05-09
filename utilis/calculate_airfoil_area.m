@@ -15,7 +15,7 @@ fig = figure();
 
 % Colormap
 m=3;
-cm_magma=viridis(m);
+cm_magma=plasma(m);
 magma_cm = colormap(cm_magma);
 set(gca, 'colororder', magma_cm);
 
@@ -55,7 +55,9 @@ axis padded
 
 
 FIG_FOLDER_NAME = 'OPTIMIZATION/';
-folderName      = ['/FIGURES/' FIG_FOLDER_NAME];
+folderName      = ['C:\Users\DELL\Desktop\AE520\Project\airfoil_opt\Opt\' ...
+    ['Untitled Folder\matlab\Convex-Optimization-Thin-Airfoils\' ...
+    'FIGURES\'] FIG_FOLDER_NAME];
 TYPE            = 'ORIGINAL';
 NAME            = 'NACA64a210';
 

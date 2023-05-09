@@ -1,4 +1,4 @@
-function [optimized_params] = minimize_supersonic_drag(params)
+function [optimized_params, drag] = minimize_supersonic_drag(params)
 % minimize_supersonic_drag: A function that minimizes the supersonic drag.
 % It uses Convex Optimization cvx Toolbox to solve the optimization problem.
 %   Inputs:
@@ -51,7 +51,7 @@ cvx_begin
        1/12*(3*a1 + a2 - 3*b1 - b2) >= A_min
 cvx_end
 
-
+drag = (4*x'*Q*x)/(sqrt(M^2 - 1));
 optimized_params = x;
 optimized_params(1) = R2D*optimized_params(1); % change alpha from rad to degs
 end
