@@ -1,3 +1,4 @@
-# Convex-Optimization-Thin-Airfoils
-Place holder  6-May-2023
+# Convex Optimization Thin Airfoils
+The code for "Novel Airfoil for Improved Supersonic Aerodynamic Performance" paper. 
+
 
