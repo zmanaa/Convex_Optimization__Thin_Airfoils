@@ -20,7 +20,7 @@ The repository is organized as follows:
 
 To use this code, follow these steps:
 
-1. Clone the repository to your local machine using the following command:'''git clone https://github.com/zmanaa/Convex-Optimization_Thin-Airfoils.git'''
+1. Clone the repository to your local machine using the following command:```git clone https://github.com/zmanaa/Convex-Optimization_Thin-Airfoils.git```
 2. Make sure you have MATLAB installed on your system.
 3. Open MATLAB and navigate to the cloned repository directory.
 4. Run the `main.m` script to execute the convex optimization process.
